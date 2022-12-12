@@ -2,14 +2,18 @@
   "name": "kmz-poc",
   "private": true,
   "license": "GPL v3",
+  "homepage": "mcesarczyk.github.io/kmz-poc/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "leaflet": "^1.9.3",
     "leaflet-kmz": "^1.0.9",
     "react": "^18.2.0",
