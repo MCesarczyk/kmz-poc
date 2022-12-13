@@ -1,75 +1,40 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
-import ReactLeafletKml from "react-leaflet-kml";
-import styled from "styled-components";
+import { Header } from "./Header";
+import { Map } from "./Map";
 import './App.css'
-
-const Header = styled.header`
-  position: absolute;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  width: 80%;
-  margin: 1rem 2rem -4rem 4rem;
-  z-index: 500;
-  right: 0;
-  top: 0;
-`;
-
-const Headline = styled.h1`
-  position: relative;
-  text-align: left;
-  background: transparent;
-  flex-shrink: 0;
-`;
-
-const Input = styled.input`
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  width: 100%;
-`;
-
-const Button = styled.button`
-  padding: 0.5rem;
-  color: white;
-  background-color: green;
-`;
 
 function App() {
   const [kml, setKml] = useState(null);
-  const [url, setUrl] = useState("https://raw.githubusercontent.com/aviklai/react-leaflet-kml/master/src/assets/example1.kml");
-  const [value, setValue] = useState("");
+  const [url, setUrl] = useState<string | undefined>(undefined);
+
+  // https://raw.githubusercontent.com/aviklai/react-leaflet-kml/master/src/assets/example1.kml
+  // https://drive.google.com/file/d/1zYfH_FJmya0X8MnasPDn4HX9FvUOXL5V/view?usp=share_link
+  // https://drive.google.com/file/d/1CUAu3xOUgomTZCG2eGdAigaJHsYjSlcx/view?usp=share_link
 
   useEffect(() => {
-    fetch(url)
+    if (!url){
+      return;
+    }
+
+    fetch(url, {mode: 'no-cors'})
       .then((res) => res.text())
       .then((kmlText) => {
         const parser = new DOMParser();
         const kml = parser.parseFromString(kmlText, "text/xml");
         setKml(kml as any);
+        console.log(kmlText);
         console.log(kml);
       });
   }, [url]);
 
+  useEffect(() => {
+      console.log(url);
+  }, [url]);
+
   return (
     <div className="App">
-      <Header>
-        <Headline>KMZ-POC</Headline>
-        <Input placeholder="Enter KMZ file Url" onChange={e => setValue(e.target.value)} />
-        <Button onClick={() => setUrl(value)}>Go</Button>
-      </Header>
-      <MapContainer
-        style={{ height: "100vh", width: "100%" }}
-        zoom={17}
-        center={[37.422, -122.084]}
-        scrollWheelZoom={true}
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        />
-        {kml && <ReactLeafletKml kml={kml} />}
-      </MapContainer>
+      <Header onSubmit={setUrl} onFileUpload={setKml} />
+      <Map kml={kml} />
     </div>
   );
 };
