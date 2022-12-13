@@ -74,15 +74,20 @@ export const Header = ({ onSubmit, onFileUpload }: HeaderProps) => {
     e.preventDefault();
     inputRef.current && inputRef.current.click();
   };
-  
+
   const handleUrlSubmit = (e: any) => {
     e.preventDefault();
     onSubmit(value);
   };
 
   const onImageSelect = (e: any) => {
-      setFile(e.target.files[0]);
-      console.log(e.target.files[0]);
+    setFile(e.target.files[0]);
+    console.log(e.target.files[0]);
+  };
+
+  const handleFileUpload = (e: any) => {
+    e.preventDefault();
+    onFileUpload(file);
   };
 
   return (
@@ -96,7 +101,7 @@ export const Header = ({ onSubmit, onFileUpload }: HeaderProps) => {
         <Fieldset>
           <FileInput ref={inputRef} type="file" onChange={onImageSelect} />
           <FileInputReplacer onClick={onInputReplacerClick} color="white" >Choose file</FileInputReplacer>
-          <Button onClick={() => onFileUpload(file)} color="crimson" >Go</Button>
+          <Button onClick={handleFileUpload} color="crimson" >Go</Button>
         </Fieldset>
       </Form>
     </HeaderWrapper>

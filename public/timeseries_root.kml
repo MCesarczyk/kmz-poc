@@ -1,0 +1,111 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <ScreenOverlay>
+      <name>colorbar</name>
+      <Icon>
+        <href>google_earth_cbar.png</href>
+        <viewBoundScale>0.75</viewBoundScale>
+      </Icon>
+      <overlayXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+      <screenXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+      <size x="0" y="250" xunits="pixel" yunits="pixel"/>
+      <rotation>0</rotation>
+      <visibility>1</visibility>
+      <open>0</open>
+    </ScreenOverlay>
+    <Folder>
+      <name>ReferencePoint</name>
+      <Placemark>
+        <Style>
+          <IconStyle>
+            <color>ff0000a8</color>
+            <scale>1.0</scale>
+            <Icon>
+              <href>star.png</href>
+            </Icon>
+          </IconStyle>
+        </Style>
+        <description>Reference point &lt;br /&gt; 
+ &lt;br /&gt; 
+&lt;font size=4&gt;Latitude: -29.761387&#730; &lt;br /&gt; 
+Longitude: 25.428071&#730; &lt;br /&gt; 
+Row: 2 &lt;br /&gt; 
+Column: 25 &lt;br /&gt; 
+ &lt;br /&gt; 
+Mean LOS velocity [cm/year]: 0.00 +/- 0.00 &lt;br /&gt; 
+Cumulative displacement [cm]: 0.00 &lt;br /&gt; 
+Temporal coherence: 1.00 &lt;br /&gt; 
+&lt;/font&gt; &lt;br /&gt;  &lt;br /&gt; *Double click to reset plot &lt;br /&gt; &lt;br /&gt;
+
+
+</description>
+        <Point>
+          <coordinates>25.428071406096176, -29.76138727940404</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Data</name>
+      <NetworkLink>
+        <name>20by20</name>
+        <visibility>1</visibility>
+        <Region>
+          <Lod>
+            <minLodPixels>0</minLodPixels>
+            <maxLodPixels>1800</maxLodPixels>
+          </Lod>
+          <LatLonAltBox>
+            <north>-29.260536846155247</north>
+            <south>-30.284929986436584</south>
+            <east>25.935940921518313</east>
+            <west>24.917362960350722</west>
+          </LatLonAltBox>
+        </Region>
+        <Link>
+          <href>kml_data/20by20.kml</href>
+          <viewRefreshMode>onRegion</viewRefreshMode>
+        </Link>
+      </NetworkLink>
+      <NetworkLink>
+        <name>5by5</name>
+        <visibility>1</visibility>
+        <Region>
+          <Lod>
+            <minLodPixels>0</minLodPixels>
+            <maxLodPixels>1800</maxLodPixels>
+          </Lod>
+          <LatLonAltBox>
+            <north>-29.260536846155247</north>
+            <south>-30.284929986436584</south>
+            <east>25.935940921518313</east>
+            <west>24.917362960350722</west>
+          </LatLonAltBox>
+        </Region>
+        <Link>
+          <href>kml_data/5by5.kml</href>
+          <viewRefreshMode>onRegion</viewRefreshMode>
+        </Link>
+      </NetworkLink>
+      <NetworkLink>
+        <name>2by2</name>
+        <visibility>1</visibility>
+        <Region>
+          <Lod>
+            <minLodPixels>0</minLodPixels>
+            <maxLodPixels>1800</maxLodPixels>
+          </Lod>
+          <LatLonAltBox>
+            <north>-29.260536846155247</north>
+            <south>-30.284929986436584</south>
+            <east>25.935940921518313</east>
+            <west>24.917362960350722</west>
+          </LatLonAltBox>
+        </Region>
+        <Link>
+          <href>kml_data/2by2.kml</href>
+          <viewRefreshMode>onRegion</viewRefreshMode>
+        </Link>
+      </NetworkLink>
+    </Folder>
+  </Document>
+</kml>

@@ -9,8 +9,8 @@ export const Map = ({ kml }: BasemapProps) => {
   return (
     <MapContainer
       style={{ height: "100vh", width: "100%" }}
-      zoom={17}
-      center={[37.422, -122.084]}
+      zoom={15}
+      center={[-29.770, 25.425]}
       scrollWheelZoom={true}
     >
       <TileLayer

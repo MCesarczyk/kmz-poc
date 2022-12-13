@@ -1,0 +1,24 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <NetworkLink>
+      <name>Region 0</name>
+      <visibility>1</visibility>
+      <Region>
+        <Lod>
+          <minLodPixels>4000</minLodPixels>
+          <maxLodPixels>-1</maxLodPixels>
+        </Lod>
+        <LatLonAltBox>
+          <north>-29.28204189353298</north>
+          <south>-30.260536846155247</south>
+          <east>25.91740841581646</east>
+          <west>24.935940921518313</west>
+        </LatLonAltBox>
+      </Region>
+      <Link>
+        <href>2by2/region_0.kml</href>
+        <viewRefreshMode>onRegion</viewRefreshMode>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>
