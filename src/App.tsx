@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { Header } from "./Header";
 import { Map } from "./Map";
+import { Fallback } from "./Fallback";
 import './App.css'
 
 function App() {
@@ -51,8 +53,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header onSubmit={setUrl} onFileUpload={setFile} />
-      <Map kml={kml} />
+      <ErrorBoundary FallbackComponent={Fallback}>
+        <Header onSubmit={setUrl} onFileUpload={setFile} />
+        <Map kml={kml} />
+      </ErrorBoundary>
     </div>
   );
 };

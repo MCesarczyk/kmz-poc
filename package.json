@@ -17,9 +17,11 @@
     "@types/node": "^18.11.14",
     "gh-pages": "^4.0.0",
     "leaflet": "^1.9.3",
+    "leaflet-kml": "^1.0.1",
     "leaflet-kmz": "^1.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
     "react-leaflet": "^4.2.0",
     "react-leaflet-kml": "^2.1.1",
     "styled-components": "^5.3.6"
